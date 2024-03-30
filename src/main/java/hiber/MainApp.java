@@ -16,22 +16,20 @@ public class MainApp {
 
         UserService userService = context.getBean(UserService.class);
 
-
         User user1 = new User("User1", "Lastname1", "user1@mail.ru");
         User user2 = new User("User2", "Lastname2", "user2@mail.ru");
         User user3 = new User("User3", "Lastname3", "user3@mail.ru");
         User user4 = new User("User4", "Lastname4", "user4@mail.ru");
 
-        Car car1 = new Car("bmw",1);
-        Car car2 = new Car("bmw",2);
-        Car car3 = new Car("bmw",3);
-        Car car4 = new Car("bmw",4);
+        Car car1 = new Car("blueTractor",1);
+        Car car2 = new Car("blueTractor",2);
+        Car car3 = new Car("blueTractor",3);
+        Car car4 = new Car("blueTractor",4);
 
         user1.setCar(car1);
         user2.setCar(car2);
         user3.setCar(car3);
         user4.setCar(car4);
-
 
         userService.add(user1);
         userService.add(user2);
@@ -48,6 +46,14 @@ public class MainApp {
             System.out.println("Car = " + user.getCar());
             System.out.println();
         }
+
+        User userByCar = userService.getUserByCar("blueTractor",3);
+        System.out.println("--------------------------------------------");
+        System.out.println("Id = " + userByCar.getId());
+        System.out.println("First Name = " + userByCar.getFirstName());
+        System.out.println("Last Name = " + userByCar.getLastName());
+        System.out.println("Email = " + userByCar.getEmail());
+        System.out.println("Car = " + userByCar.getCar());
 
         context.close();
     }

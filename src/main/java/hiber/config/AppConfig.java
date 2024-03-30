@@ -46,8 +46,8 @@ public class AppConfig {
       props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
       factoryBean.setPackagesToScan("hiber.model");
       factoryBean.setHibernateProperties(props);
-      factoryBean.setAnnotatedClasses(hiber.model.User.class);
-      factoryBean.setAnnotatedClasses(Car.class);
+//      factoryBean.setAnnotatedClasses(hiber.model.User.class);
+//      factoryBean.setAnnotatedClasses(Car.class);
       return factoryBean;
    }
 
